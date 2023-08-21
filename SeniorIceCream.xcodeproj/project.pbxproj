@@ -11,8 +11,8 @@
 		959862522A930FCD0047E1D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959862512A930FCD0047E1D5 /* ContentView.swift */; };
 		959862542A930FCE0047E1D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 959862532A930FCE0047E1D5 /* Assets.xcassets */; };
 		959862572A930FCE0047E1D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 959862562A930FCE0047E1D5 /* Preview Assets.xcassets */; };
-		959862592A930FCE0047E1D5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959862582A930FCE0047E1D5 /* Persistence.swift */; };
-		9598625C2A930FCE0047E1D5 /* SeniorIceCream.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9598625A2A930FCE0047E1D5 /* SeniorIceCream.xcdatamodeld */; };
+		959862672A9312D50047E1D5 /* NameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959862662A9312D50047E1D5 /* NameListView.swift */; };
+		9598626C2A9313EC0047E1D5 /* SeniorListObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598626B2A9313EC0047E1D5 /* SeniorListObservable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,8 +21,8 @@
 		959862512A930FCD0047E1D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		959862532A930FCE0047E1D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		959862562A930FCE0047E1D5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		959862582A930FCE0047E1D5 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		9598625B2A930FCE0047E1D5 /* SeniorIceCream.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SeniorIceCream.xcdatamodel; sourceTree = "<group>"; };
+		959862662A9312D50047E1D5 /* NameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameListView.swift; sourceTree = "<group>"; };
+		9598626B2A9313EC0047E1D5 /* SeniorListObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorListObservable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +55,11 @@
 		9598624E2A930FCD0047E1D5 /* SeniorIceCream */ = {
 			isa = PBXGroup;
 			children = (
+				959862632A9312430047E1D5 /* ViewModel */,
+				959862622A93123E0047E1D5 /* View */,
 				9598624F2A930FCD0047E1D5 /* SeniorIceCreamApp.swift */,
 				959862512A930FCD0047E1D5 /* ContentView.swift */,
 				959862532A930FCE0047E1D5 /* Assets.xcassets */,
-				959862582A930FCE0047E1D5 /* Persistence.swift */,
-				9598625A2A930FCE0047E1D5 /* SeniorIceCream.xcdatamodeld */,
 				959862552A930FCE0047E1D5 /* Preview Content */,
 			);
 			path = SeniorIceCream;
@@ -71,6 +71,22 @@
 				959862562A930FCE0047E1D5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		959862622A93123E0047E1D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				959862662A9312D50047E1D5 /* NameListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		959862632A9312430047E1D5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9598626B2A9313EC0047E1D5 /* SeniorListObservable.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,9 +159,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9598625C2A930FCE0047E1D5 /* SeniorIceCream.xcdatamodeld in Sources */,
-				959862592A930FCE0047E1D5 /* Persistence.swift in Sources */,
 				959862522A930FCD0047E1D5 /* ContentView.swift in Sources */,
+				9598626C2A9313EC0047E1D5 /* SeniorListObservable.swift in Sources */,
+				959862672A9312D50047E1D5 /* NameListView.swift in Sources */,
 				959862502A930FCD0047E1D5 /* SeniorIceCreamApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,19 +363,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		9598625A2A930FCE0047E1D5 /* SeniorIceCream.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				9598625B2A930FCE0047E1D5 /* SeniorIceCream.xcdatamodel */,
-			);
-			currentVersion = 9598625B2A930FCE0047E1D5 /* SeniorIceCream.xcdatamodel */;
-			path = SeniorIceCream.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 959862442A930FCD0047E1D5 /* Project object */;
 }
