@@ -23,7 +23,7 @@ enum SelectState {
 class SeniorListObservable: ObservableObject {
     @Published var userList: [String] = []
     @Published var selectedSenior: Person?
-    @Published var selectState:SelectState = .notStated
+    @Published var selectState: SelectState = .notStated
     
     func addNewMemeber(_ newMember: String) {
         userList.append(newMember)
@@ -49,6 +49,7 @@ class SeniorListObservable: ObservableObject {
                 print("decoding error")
                 return
             }
+            
             var senior: Person?
             var maxAge = 0
             peopleResponse.forEach{ person in
