@@ -5,6 +5,7 @@
 //  Created by Seungui Moon on 2023/08/21.
 //
 
+import Combine
 import Foundation
 
 struct Person: Codable {
@@ -68,5 +69,26 @@ class SeniorListObservable: ObservableObject {
             }
             
            }.resume()
+    }
+    
+    func findSeniorWithCombine(){
+        selectState = .loading
+        var baseURL = "https://api.agify.io?"
+        for user in userList {
+            baseURL += "name[]=\(user)&"
+        }
+        baseURL.removeLast()
+        guard let url = URL(string: baseURL) else {
+          return
+        }
+        
+        let _ = URLSession.shared.dataTaskPublisher(for: url)
+            .map { $0.data }
+            .decode(type: People.self, decoder: JSONDecoder())
+            .replaceError(with: [])
+            .receive(on: RunLoop.main)
+            .sink { data in
+                print(data)
+                }
     }
 }
