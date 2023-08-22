@@ -15,7 +15,7 @@ struct Person: Codable {
 typealias People = [Person]
 
 class SeniorListObservable: ObservableObject {
-    @Published var userList: [String] = ["austin", "anne", "joyce", "yong"]
+    @Published var userList: [String] = []
     @Published var selectedSenior: Person?
     
     func addNewMemeber(_ newMember: String) {
@@ -28,7 +28,6 @@ class SeniorListObservable: ObservableObject {
             baseURL += "name[]=\(user)&"
         }
         baseURL.removeLast()
-        print((baseURL))
         guard let url = URL(string: baseURL) else {
           return
         }

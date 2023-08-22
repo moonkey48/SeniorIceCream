@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		953CC5792A945EFA00E95E96 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953CC5782A945EFA00E95E96 /* ViewExtension.swift */; };
 		959862502A930FCD0047E1D5 /* SeniorIceCreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598624F2A930FCD0047E1D5 /* SeniorIceCreamApp.swift */; };
 		959862522A930FCD0047E1D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959862512A930FCD0047E1D5 /* ContentView.swift */; };
 		959862542A930FCE0047E1D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 959862532A930FCE0047E1D5 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		953CC5782A945EFA00E95E96 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		9598624C2A930FCD0047E1D5 /* SeniorIceCream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeniorIceCream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9598624F2A930FCD0047E1D5 /* SeniorIceCreamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorIceCreamApp.swift; sourceTree = "<group>"; };
 		959862512A930FCD0047E1D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +38,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		953CC5772A945EE900E95E96 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				953CC5782A945EFA00E95E96 /* ViewExtension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		959862432A930FCD0047E1D5 = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +65,7 @@
 		9598624E2A930FCD0047E1D5 /* SeniorIceCream */ = {
 			isa = PBXGroup;
 			children = (
+				953CC5772A945EE900E95E96 /* Utils */,
 				959862632A9312430047E1D5 /* ViewModel */,
 				959862622A93123E0047E1D5 /* View */,
 				9598624F2A930FCD0047E1D5 /* SeniorIceCreamApp.swift */,
@@ -163,6 +174,7 @@
 				9598626C2A9313EC0047E1D5 /* SeniorListObservable.swift in Sources */,
 				959862672A9312D50047E1D5 /* NameListView.swift in Sources */,
 				959862502A930FCD0047E1D5 /* SeniorIceCreamApp.swift in Sources */,
+				953CC5792A945EFA00E95E96 /* ViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,17 +306,19 @@
 				DEVELOPMENT_TEAM = 333J2S2AQK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.word-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ada.austin.JunctionAsia2023.GAGA.SeniorIceCream;
+				PRODUCT_BUNDLE_IDENTIFIER = ada.austin.SeniorIceCream;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -323,17 +337,19 @@
 				DEVELOPMENT_TEAM = 333J2S2AQK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.word-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ada.austin.JunctionAsia2023.GAGA.SeniorIceCream;
+				PRODUCT_BUNDLE_IDENTIFIER = ada.austin.SeniorIceCream;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
