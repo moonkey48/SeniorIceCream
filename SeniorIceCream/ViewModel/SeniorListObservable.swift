@@ -14,15 +14,23 @@ struct Person: Codable {
 }
 typealias People = [Person]
 
+enum SelectState {
+    case notStated
+    case loading
+    case done
+}
+
 class SeniorListObservable: ObservableObject {
     @Published var userList: [String] = []
     @Published var selectedSenior: Person?
+    @Published var selectState:SelectState = .notStated
     
     func addNewMemeber(_ newMember: String) {
         userList.append(newMember)
     }
     
     func findSenior(){
+        selectState = .loading
         var baseURL = "https://api.agify.io?"
         for user in userList {
             baseURL += "name[]=\(user)&"
@@ -55,6 +63,7 @@ class SeniorListObservable: ObservableObject {
             
             DispatchQueue.main.async {
                 self.selectedSenior = senior
+                self.selectState = .done
             }
             
            }.resume()
