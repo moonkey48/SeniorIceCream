@@ -91,21 +91,19 @@ extension IceCreamView {
                 .background(.gray.opacity(0.02))
                 .cornerRadius(10)
             } else {
-                ScrollView {
-                    ForEach(seniorObservable.userList, id: \.self) { memerName in
-                        HStack {
-                            Spacer()
-                            Text(memerName)
-                                .foregroundColor(.gray.opacity(0.8))
-                                .font(.system(size: 16, weight: .semibold))
-                                .padding()
-                                .multilineTextAlignment(.center)
-                            Spacer()
-                        }
-                        .background(.gray.opacity(0.02))
-                        .cornerRadius(10)
+                List {
+                    ForEach(seniorObservable.userList, id: \.self) { memberName in
+                        Text(memberName)
+                            .foregroundColor(.gray.opacity(0.8))
+                            .font(.system(size: 18, weight: .semibold))
+                            .multilineTextAlignment(.center)
+                            .padding(.vertical,10)
                     }
+                    .onDelete(perform: delete)
                 }
+                .scrollContentBackground(.hidden)
+                .padding(.trailing, 20)
+
             }
         }
     }
@@ -196,6 +194,12 @@ extension IceCreamView {
                 Spacer()
                     .frame(height: 30)
             }
+        }
+    }
+    
+    func delete(at offsets: IndexSet) {
+        if let first = offsets.first {
+            seniorObservable.userList.remove(at: first)
         }
     }
 }
