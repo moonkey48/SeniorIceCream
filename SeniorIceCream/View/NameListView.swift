@@ -10,16 +10,15 @@ import SwiftUI
 struct NameListView: View {
     @ObservedObject private var seniorObservable = SeniorListObservable()
     @State private var newMememberName = ""
-    @State private var selectedSenior = ""
     
     var body: some View {
         NavigationStack {
             VStack {
-                if selectedSenior.isEmpty {
+                if let senior = seniorObservable.selectedSenior {
+                    Text("\(senior.name) buy ice cream!!")
+                } else {
                     Spacer()
                         .frame(height: 30)
-                } else {
-                    Text(selectedSenior)
                 }
                 
                 ForEach(seniorObservable.userList, id: \.self) { memerName in
