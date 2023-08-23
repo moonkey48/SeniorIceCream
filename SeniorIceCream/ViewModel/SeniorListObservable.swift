@@ -11,7 +11,7 @@ import Foundation
 struct Person: Codable {
     var count: Int
     var name: String
-    var age: Int
+    var age: Int?
 }
 typealias People = [Person]
 
@@ -25,12 +25,15 @@ class SeniorListObservable: ObservableObject {
     @Published var userList: [String] = []
     @Published var selectedSenior: Person?
     @Published var selectState: SelectState = .notStated
+    @Published var nilNameList: [String] = []
     
     func addNewMemeber(_ newMember: String) {
         userList.append(newMember)
     }
     
     func findSenior(){
+        self.nilNameList = []
+        self.selectedSenior = nil
         selectState = .loading
         var baseURL = "https://api.agify.io?"
         for user in userList {
@@ -54,18 +57,28 @@ class SeniorListObservable: ObservableObject {
             var senior: Person?
             var maxAge = 0
             peopleResponse.forEach{ person in
-                if person.age > maxAge {
-                    maxAge = person.age
-                    senior = person
+                if let age = person.age {
+                    if age > maxAge {
+                        maxAge = age
+                        senior = person
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.nilNameList.append(person.name)
+                        print("\(person.name) is nil")
+                    }
                 }
             }
-            guard let senior = senior else {
-                return
-            }
-            
-            DispatchQueue.main.async {
-                self.selectedSenior = senior
-                self.selectState = .done
+            print(senior)
+            if !self.nilNameList.isEmpty {
+                DispatchQueue.main.async {
+                    self.selectState = .done
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.selectedSenior = senior
+                    self.selectState = .done
+                }
             }
             
            }.resume()

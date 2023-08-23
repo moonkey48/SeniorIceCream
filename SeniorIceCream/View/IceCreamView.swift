@@ -143,7 +143,7 @@ extension IceCreamView {
             if seniorObservable.userList.isEmpty {
                 alertText = "아직 인원을 추가하지 않으셨어요"
             } else {
-                seniorObservable.findSeniorWithCombine()
+                seniorObservable.findSenior()
             }
         } label: {
             HStack {
@@ -190,9 +190,30 @@ extension IceCreamView {
                     Spacer()
                 }
             } else {
-                Text("영어 이름을 입력하지 않으신 분이 계셔서 결과가 나오지 않았어요 😭")
-                Spacer()
-                    .frame(height: 30)
+                if !seniorObservable.nilNameList.isEmpty {
+                    ForEach(seniorObservable.nilNameList, id: \.self) { nilNamePerson in
+                        HStack {
+                            Spacer()
+                            Text("\(nilNamePerson)")
+                                .foregroundColor(.gray.opacity(0.8))
+                                .font(.system(size: 16, weight: .semibold))
+                                .padding()
+                                .multilineTextAlignment(.center)
+                            Spacer()
+                        }
+                        .background(.gray.opacity(0.02))
+                        .cornerRadius(10)
+                    }
+                    Text("위에 이름의 영어 이름에 없어서\n결과가 나오지 않았어요 \n 해당 이름을 수정해주세요 🫠")
+                        .foregroundColor(.gray.opacity(0.8))
+                        .font(.system(size: 16, weight: .semibold))
+                        .padding()
+                        .multilineTextAlignment(.center)
+                    Spacer()
+                        .frame(height: 30)
+                } else {
+                    Text("?")
+                }
             }
         }
     }
