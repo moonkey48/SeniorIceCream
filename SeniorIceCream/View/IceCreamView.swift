@@ -143,7 +143,8 @@ extension IceCreamView {
             if seniorObservable.userList.isEmpty {
                 alertText = "아직 인원을 추가하지 않으셨어요"
             } else {
-                seniorObservable.findSenior()
+//                seniorObservable.findSenior()
+                seniorObservable.findSeniorWithCombine()
             }
         } label: {
             HStack {
