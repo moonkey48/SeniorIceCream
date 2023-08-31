@@ -1,9 +1,7 @@
 # SeniorIceCream
 ![Free_Iphone_14_Pro_Mockup_5](https://github.com/moonkey48/SeniorIceCream/assets/105622985/d40a4a3b-fd65-4dda-9677-4942028e5b69)
 <div align="center">
-  <img width="150" alt="Group 2790" src="https://github.com/moonkey48/SeniorIceCream/assets/105622985/febcc3f6-4193-4594-bb4f-1740f288933e">
-  &nbsp;
-  &nbsp;
+  <img width="150" alt="Group 2790" src="https://github.com/moonkey48/SeniorIceCream/assets/105622985/ebaf6fcc-68ee-460d-b4be-af2acb9ec361">
   
   [TestFlight에서 SeniorBuyIceCream을 체험해보세요😁](https://testflight.apple.com/join/yFxblWKm)
   
@@ -34,6 +32,8 @@
 
 #### 😇 해결 😇
 > 문제는 Cancelable에 대한 이해 부족이었다. Subscription은 Cancellable 프로토콜을 준수하는데 모든 Cancellable은 저장되지 않을 경우 즉시 구독이 취소된다. 따라서 `private var canclablle = Set<AnyCancellable>()`과 `.store(in: &canclablle)`를 통해 `Cancellable`을 저장해줌으로 문제를 해결할 수 있었다.
+
+<br/>
 
 #### 💬 회고 💬
 > 기본 지식이 부족한 상태로 기술을 사용하는 것은 눈을 반쯤 가리고 운전하는 것 같았다. 기본 지식에 대한 분명한 이해를 하고, 문제를 해결하고 나서도 잘 정리를 해서 같은 문제가 발생하지 않게 정리를 해두어야겠다. `Cancellable`에 대한 분명한 이해를 가지고 다른 프로젝트에 적용해야 할 것 같다. 
